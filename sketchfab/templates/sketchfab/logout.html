@@ -1,0 +1,14 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+    {% block content %}
+        Logged out !
+
+        <a href="{% url 'index' %}"><button>Home</button></a>
+    {% endblock %}
+</body>
+</html>
