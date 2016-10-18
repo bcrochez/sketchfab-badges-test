@@ -1,0 +1,19 @@
+{% block head %}
+<title>Upload - Sketchfab</title>
+{% endblock %}
+
+{% block content %}
+
+    <form method="post" action="{% url 'sketchfab:upload' %}">
+        {% csrf_token %}
+        <table>
+        <tr>
+            <td><label>Name</label></td>
+            <td><input type="text" name="name" /></td>
+        </tr>
+        </table>
+        <input type="submit" value="Upload" />
+    </form>
+
+    <a href="{% url 'sketchfab:index' %}"><button>Cancel</button></a>
+{% endblock %}

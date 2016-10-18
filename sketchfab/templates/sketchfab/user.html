@@ -5,8 +5,20 @@
 {% endblock %}
 
 {% block content %}
-<h2>{{ user.user.username }}</h2>
+<h2>{{ user.user.username }}'s profile</h2>
 <p>
     Member since {{ user.date_signin }}.
 </p>
+<div>
+    {% if user.user.model3d_set.all %}
+    <h3>{{ user.user.username }}'s models</h3>
+    <ul>
+        {% for model in user.user.model3d_set.all %}
+        <li><a href="{% url 'sketchfab:model' model.id %}">{{ model.name }}</a></li>
+        {% endfor %}
+    </ul>
+    {% else %}
+    <h3>{{ user.user.username }} has uploaded no model</h3>
+    {% endif %}
+</div>
 {% endblock %}

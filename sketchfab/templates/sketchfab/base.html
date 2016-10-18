@@ -8,22 +8,22 @@
 <body>
     <div>
         <p><a href="{% url 'sketchfab:index' %}">Home</a></p>
-      {% if request.user.is_authenticated %}
+        {% if request.user.is_authenticated %}
         <p>
             You're logged as {{ request.user.username }} !
         </p>
         <p>
-            <a href="."><button>Upload a 3D model</button></a>
+            <a href="{% url 'sketchfab:upload' %}"><button>Upload a 3D model</button></a>
             <a href="{% url 'sketchfab:logout' %}"><button>Logout</button></a>
         </p>
-      {% else %}
+        {% else %}
         <p>
             You're not logged
         </p>
         <p>
             <a href="{% url 'sketchfab:login' %}?next={{ request.path }}"><button>Login</button></a>
         </p>
-      {% endif %}
+        {% endif %}
     </div>
 
     <div>
