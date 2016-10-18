@@ -1,0 +1,12 @@
+{% extends 'sketchfab/base.html' %}
+
+{% block head %}
+<title>{{ model.name }} - Sketchfab</title>
+{% endblock %}
+
+{% block content %}
+<h2>{{ model.name }} by {{ model.user.username }}</h2>
+<p>
+    Model viewed {{ model.views }} times.
+</p>
+{% endblock %}

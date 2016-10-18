@@ -6,4 +6,12 @@
 
 {% block content %}
 <h2>Welcome to sketchfab</h2>
+<div>
+    <h3>Models</h3>
+    <ul>
+    {% for model in models %}
+        <li><a href="{% url 'sketchfab:model' model.id %}">{{ model.name }}</a> by <a href="{% url 'sketchfab:user' model.user.id %}">{{ model.user.username }}</a></li>
+    {% endfor %}
+    </ul>
+</div>
 {% endblock %}

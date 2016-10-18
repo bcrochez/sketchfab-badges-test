@@ -7,6 +7,7 @@
 </head>
 <body>
     <div>
+        <p><a href="{% url 'sketchfab:index' %}">Home</a></p>
       {% if request.user.is_authenticated %}
         <p>
             You're logged as {{ request.user.username }} !
