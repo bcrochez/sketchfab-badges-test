@@ -9,6 +9,8 @@ def index(request):
 
 
 def login_view(request):
+    if request.user.is_authenticated :
+        return redirect('index')
     if request.POST:
         username = request.POST['username']
         password = request.POST['password']

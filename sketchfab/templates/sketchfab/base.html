@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Sketchfab</title>
+</head>
+<body>
+    <div>
+      {% if request.user.is_authenticated %}
+        <p>
+            You're logged as {{ request.user.username }} !
+        </p>
+        <p>
+            <a href="."><button>Upload a 3D model</button></a>
+            <a href="{% url 'logout' %}"><button>Logout</button></a>
+        </p>
+      {% else %}
+        <p>
+            You're not logged
+        </p>
+        <p>
+            <a href="{% url 'login' %}"><button>Login</button></a>
+        </p>
+      {% endif %}
+    </div>
+
+    <div>
+        {% block content %}
+        {% endblock %}
+    </div>
+</body>
+</html>

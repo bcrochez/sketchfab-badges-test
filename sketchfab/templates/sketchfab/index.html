@@ -1,18 +1,5 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>Sketchfab</title>
-</head>
-<body>
-    <div>
-      {% if request.user.is_authenticated %}
-        Hello {{ request.user.username }} !
-        <a href="{% url 'logout' %}"><button>Logout</button></a>
-      {% else %}
-        You're not log in
-        <a href="{% url 'login' %}"><button>Login</button></a>
-      {% endif %}
-    </div>
-</body>
-</html>
+{% extends 'sketchfab/base.html' %}
+
+{% block content %}
+<h2>Welcome to sketchfab</h2>
+{% endblock %}
