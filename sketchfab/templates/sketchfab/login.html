@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Sketchfab</title>
+    <title>Log in - Sketchfab</title>
 </head>
 <body>
 
@@ -10,23 +10,23 @@
         <p>Your username and password didn't match. Please try again.</p>
     {% endif %}
 
-    <form method="post" action="{% url 'login' %}">
+    <form method="post" action="{% url 'sketchfab:login' %}">
         {% csrf_token %}
         <table>
-            <tr>
-                <td>Username</td>
-                <td><input type="text" name="username" /></td>
-            </tr>
-            <tr>
-                <td>Password</td>
-                <td><input type="password" name="password" /></td>
-            </tr>
+        <tr>
+            <td>{{ form.username.label_tag }}</td>
+            <td>{{ form.username }}</td>
+        </tr>
+        <tr>
+            <td>{{ form.password.label_tag }}</td>
+            <td>{{ form.password }}</td>
+        </tr>
         </table>
-
-        <input type="submit" value="Log in" />
-        <!--<input type="hidden" name="next" value="{{ next }}" />-->
+        <input type="submit" value="login" />
+        <input type="hidden" name="next" value="{{ next }}" />
     </form>
-    <a href="{% url 'index' %}"><button>Cancel</button></a>
+
+    <a href="{% url 'sketchfab:index' %}"><button>Cancel</button></a>
 
 </body>
 </html>

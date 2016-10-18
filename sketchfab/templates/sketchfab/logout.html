@@ -1,10 +1,15 @@
-{% extends 'sketchfab/base.html' %}
-
-{% block content %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Log in - Sketchfab</title>
+</head>
+<body>
     <p>
         Logged out !
     </p>
     <p>
-        <a href="{% url 'index' %}"><button>Home</button></a>
+        <a href="{% url 'sketchfab:index' %}"><button>Home</button></a>
     </p>
-{% endblock %}
+</body>
+</html>
