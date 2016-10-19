@@ -5,7 +5,7 @@
 {% endblock %}
 
 {% block content %}
-<h2>{{ model.name }} by {{ model.user.username }}</h2>
+<h2>{{ model.name }} by <a href="{% url 'sketchfab:user' model.user.id %}">{{ model.user.username }}</a></h2>
 <p>
     Model viewed {{ model.views }} times.
 </p>

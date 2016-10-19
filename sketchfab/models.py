@@ -24,6 +24,10 @@ class Model3D(models.Model):
 
 
 class Badge(models.Model):
+    """ Badge Star : id = 1
+        Badge Collector : id = 2
+        Badge Pioneer : id = 3
+    """
     users = models.ManyToManyField(User)
     title = models.CharField(max_length=200)
     description = models.CharField(max_length=200)

@@ -10,6 +10,18 @@
     Member since {{ user.date_signin }}.
 </p>
 <div>
+    <h2>{{ user.user.username }}'s badges</h2>
+    {% if user.user.badge_set.all %}
+    <ul>
+        {% for badge in user.user.badge_set.all %}
+        <li>{{ badge.title }} : {{ user.user.username }} {{ badge.description }}</li>
+        {% endfor %}
+    </ul>
+    {% else %}
+    {{ user.user.username }} has earned no badge.
+    {% endif %}
+</div>
+<div>
     {% if user.user.model3d_set.all %}
     <h3>{{ user.user.username }}'s models</h3>
     <ul>
